@@ -67,6 +67,3 @@ function newCard(){
 
    
 }
-function newGame(){
-   
-}
