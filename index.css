@@ -1,0 +1,15 @@
+body{
+    background-image:url("blackjack.jpg");
+    text-align: center;
+    font-family: monospace,sans-serif,'Times New Roman', Times, serif;
+    color: white;
+    background-size: cover;
+    font-style: italic;
+}
+
+button{
+    background-color: goldenrod;
+    margin-bottom: 4px;
+    margin-top: 4px;
+
+}
