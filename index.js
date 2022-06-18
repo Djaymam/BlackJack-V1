@@ -38,6 +38,7 @@ function renderNewGame(){
    message="BLACK JACK"
    blackJack=true
    gameStatus=false
+   window.alert("GANHOU!!!!")
 
  }else if(sum<21){
     message="Do You Want To Draw New Cards?"
@@ -45,6 +46,7 @@ function renderNewGame(){
  }else{
     message="You are out of the GAME!!"
     gameStatus=false
+    window.alert("PERDEUU!!")
  }
  messageEl.innerHTML=message
 }
@@ -64,6 +66,4 @@ function newCard(){
    }else{
 
    }
-
-   
 }
