@@ -41,6 +41,7 @@ function renderNewGame(){
    message = "BLACK JACK"
    blackJack = true
    window.alert("GANHOU!!!!")
+  
 
  }else if(sum <= 20){
     message = "Do You Want To Draw New Cards?"
@@ -49,22 +50,23 @@ function renderNewGame(){
     message = "You are out of the GAME!!"
     gameStatus = false
     window.alert("PERDEUU!!")
+    
+    
  }
  messageEl.innerHTML = message
 }
 //Funcao para obter nova carta
 function newCard(){
+   message.innerHTML = "Drawing New Card From The Deck!"
+   let drawCards = getRandonCard()
+   sum += drawCards
+   cards.push(drawCards)
+   //cardsEl.innerHTML=cards+" "
+   //cardsEl.innerHTML="Cards: "+firstCard+" "++" "+drawCards
+   //sumEl.innerHTML="Sum: "+sum
+   //renderizar os novos dados 
+  renderNewGame()
    if(blackJack === false && gameStatus === true){
-      
-      message.innerHTML = "Drawing New Card From The Deck!"
-      let drawCards = getRandonCard()
-      sum += drawCards
-      cards.push(drawCards)
-      //cardsEl.innerHTML=cards+" "
-      //cardsEl.innerHTML="Cards: "+firstCard+" "++" "+drawCards
-      //sumEl.innerHTML="Sum: "+sum
-      //renderizar os novos dados 
-     renderNewGame()
-
+      startGame()
    }
 }
