@@ -4,9 +4,15 @@ let blackJack = false
 let gameStatus = true
 let message = ""
 let player = {
-   name: "Jaylson",
+   name: "Player 1",
    Chip: 100
 }
+
+
+//Name of the Player
+let newPlayer=window.prompt("What's Your Name!")
+player.name=newPlayer
+
 //funcao para trazer randomizadas
 function getRandonCard(){
    let randomNumb = Math.floor(Math.random()*14)+1
@@ -19,6 +25,7 @@ function getRandonCard(){
    }
    return randomNumb
 }
+
 //iniciar jogo/renderizar
 function startGame(){
    let firstCard = getRandonCard()
@@ -27,6 +34,7 @@ function startGame(){
    cards = [firstCard,secondCard]
    renderNewGame()
 }
+
 //funcao do jogo base
 function renderNewGame(){
     let playerData = document.getElementById("player-el")
@@ -41,6 +49,7 @@ function renderNewGame(){
    message = "BLACK JACK"
    blackJack = true
    window.alert("GANHOU!!!!")
+   player.Chip+=100
   
 
  }else if(sum <= 20){
@@ -50,11 +59,13 @@ function renderNewGame(){
     message = "You are out of the GAME!!"
     gameStatus = false
     window.alert("PERDEUU!!")
-    
+    player.Chip-=20
     
  }
  messageEl.innerHTML = message
 }
+
+
 //Funcao para obter nova carta
 function newCard(){
    message.innerHTML = "Drawing New Card From The Deck!"
@@ -69,4 +80,7 @@ function newCard(){
    if(blackJack === false && gameStatus === true){
       startGame()
    }
+   if(player.Chip===0){
+      window.stop()
+    }
 }
