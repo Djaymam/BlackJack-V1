@@ -50,6 +50,7 @@ function renderNewGame(){
    blackJack = true
    window.alert("GANHOU!!!!")
    player.Chip+=100
+   startGame()
   
 
  }else if(sum <= 20){
@@ -60,6 +61,9 @@ function renderNewGame(){
     gameStatus = false
     window.alert("PERDEUU!!")
     player.Chip-=20
+    startGame()
+
+
     
  }
  messageEl.innerHTML = message
@@ -77,10 +81,10 @@ function newCard(){
    //sumEl.innerHTML="Sum: "+sum
    //renderizar os novos dados 
   renderNewGame()
+
    if(blackJack === false && gameStatus === true){
       startGame()
    }
-   if(player.Chip===0){
-      window.stop()
-    }
+  
 }
+
