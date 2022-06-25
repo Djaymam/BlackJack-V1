@@ -37,10 +37,10 @@ function startGame(){
 
 //funcao do jogo base
 function renderNewGame(){
-    let playerData = document.getElementById("player-el")
-    let messageEl = document.getElementById("message-el")
-    let sumEl = document.getElementById("sum-el")
-    let cardsEl = document.getElementById("cards-el")
+    const playerData = document.getElementById("player-el")
+    const messageEl = document.getElementById("message-el")
+    const sumEl = document.getElementById("sum-el")
+    const cardsEl = document.getElementById("cards-el")
     playerData.innerHTML = player.name + ": $ " + player.Chip
     cardsEl.innerHTML = "Cards: "+cards+" "
     sumEl.innerHTML = "Sum: "+sum
@@ -62,9 +62,6 @@ function renderNewGame(){
     window.alert("PERDEUU!!")
     player.Chip-=20
     startGame()
-
-
-    
  }
  messageEl.innerHTML = message
 }
